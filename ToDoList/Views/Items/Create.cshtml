@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ToDoList.Models.Item
+
+<div class="container">
+  <h4>Add a new task</h4>
+  @using(Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Category)
+    @Html.DropDownList("CategoryId")
+    
+    <input type="submit" value="Add new task"/>
+  }
+  <p>@Html.ActionLink("Show all the items", "Index")</p>
+</div>
